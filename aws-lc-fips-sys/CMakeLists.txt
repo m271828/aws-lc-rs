@@ -12,6 +12,7 @@ endif()
 
 project(AWS_LC_RUST NONE)
 enable_language(C)
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -O2 -fhardened -Wno-error=hardened")
 
 function(set_my_target_properties ...)
     set_target_properties(rust_wrapper crypto PROPERTIES ${ARGV})
